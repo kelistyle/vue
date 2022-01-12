@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="( value,index) in mobies "  :class="{'active':shu==index}" @click='bander(index)'>
+            {{value}}
+        </li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            shu : 0 ,
+            mobies:['兽','明','北','az']
+        },
+        methods:{
+            bander:function(obj){
+                this.shu = obj;
+    }
+        }
+    })
+</script>
+</body>
+</html>
